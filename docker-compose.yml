@@ -19,7 +19,8 @@ services:
       - "${NGINX_HOST_HTTPS_PORT}:443"
 
   wordpress:
-    image: wordpress:php7.3-fpm
+    build:
+      context: .
     container_name: docker-wp
     working_dir: /var/www/html
     tty: true
@@ -44,6 +45,7 @@ services:
       LOGGED_IN_SALT: ${LOGGED_IN_SALT}
       NONCE_SALT: ${NONCE_SALT}
       DB_PREFIX: ${DB_PREFIX}
+      COMPOSER_ALLOW_SUPERUSER: 1
     ports:
       - '9000:9000'
 
