@@ -3,7 +3,7 @@
 export $(shell sed 's/=.*//' .env)
 
 CONFIG_DIR=./config
-DOCKER_COMPOSE=docker-compose
+DOCKER_COMPOSE=docker compose
 SSL_CERTIFICATES_FOLDER=$(CONFIG_DIR)/certs
 APP_HOST_NAME=${APP_HOST}
 WP_CORE_DOWNLOAD=wp core download --path=. --locale=en_US --version=latest --skip-content --force
